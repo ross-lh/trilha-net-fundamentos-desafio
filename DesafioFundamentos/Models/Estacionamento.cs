@@ -49,7 +49,7 @@ namespace DesafioFundamentos.Models
                 Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado: ");
                 int HorasEstacionado = Convert.ToInt32(Console.ReadLine());
 
-                decimal ValorTotal = PrecoInicial + PrecoPorHora * HorasEstacionado; 
+                decimal ValorTotal = PrecoInicial + (PrecoPorHora * (HorasEstacionado-1)); 
                 // Remove a placa digitada da lista de veículos
                 Veiculos.Remove(RemoverPlaca);
 
