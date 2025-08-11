@@ -12,7 +12,6 @@ namespace DesafioFundamentos.Models
         {
             PrecoInicial = precoInicial;
             PrecoPorHora = precoPorHora;
-            // CapacidadeTotal = capacidadeTotal;
         }
 
         private string Placa { get; set; }
@@ -40,7 +39,8 @@ namespace DesafioFundamentos.Models
         public void RemoverVeiculo()
         {
             // Pede ao usuário que insira a placa para armazená-la na variável "Placa"
-            string RemoverPlaca = $"Digite a placa do veículo saindo do estacionamento: {Console.ReadLine()}";
+            Console.WriteLine("Digite a placa do veículo a ser removido: ");
+            string RemoverPlaca = Console.ReadLine();
 
             // Verifica se a placa do veículo inserida existe na lista
             if (Veiculos.Any(x => x.ToUpper() == RemoverPlaca.ToUpper()))
@@ -61,7 +61,6 @@ namespace DesafioFundamentos.Models
                 // Relata ao usuário que não encontrou a placa mencionada e força um retorno ao menu principal
                 Console.WriteLine("Desculpe, o veículo mencionado não está estacionado aqui. Confira se digitou a placa corretamente.");
             }
-
         }
 
         public void ListarVeiculos()
@@ -70,10 +69,10 @@ namespace DesafioFundamentos.Models
 
             if (Veiculos.Count > 0)
             {
-            // Explicita cada veículo estacionado de acordo com a respectiva vaga
-                foreach (string i in Veiculos)
+                // Explicita cada veículo estacionado de acordo com a respectiva vaga
+                foreach (string placa in Veiculos)
                 {
-                    Console.WriteLine($"Veículo na vaga {Veiculos.IndexOf(i)} possui a placa: {i}");
+                    Console.WriteLine($"Veículo na vaga {Veiculos.IndexOf(placa)+1} possui a placa: {placa}");
                 }
             }
             else

@@ -3,9 +3,7 @@
 // Coloca o encoding para UTF8 para exibir acentuação
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-// decimal precoInicial;
-// decimal precoPorHora;
-// int capacidadeTotal;
+Console.Clear();
 
 Console.WriteLine("Seja bem vindo ao sistema de estacionamento!\n" +
                   "Digite o preço inicial:");
@@ -13,9 +11,6 @@ decimal precoInicial = Convert.ToDecimal(Console.ReadLine());
 
 Console.WriteLine("Agora digite o preço por hora:");
 decimal precoPorHora = Convert.ToDecimal(Console.ReadLine());
-
-// Console.WriteLine("Por fim, insira a quantidade de vagas do estacionamento:");
-// int capacidadeTotal = Convert.ToInt32(Console.ReadLine());
 
 // Instancia a classe Estacionamento, já com os valores obtidos anteriormente
 Estacionamento es = new(precoInicial, precoPorHora);
